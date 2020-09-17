@@ -1,13 +1,13 @@
 let gameNum = 1;
+let numWin = 0;
+let numLose = 0;
+let numDraws = 0;
 
 function playChoice() {
   // Play user's choice of "rock, paper, or scissors" and compare to randomized result of computer's choice, also of "rock, paper, scissors"
   // Rock beats scissors, Scissors beats paper, and Paper beats rock
   // Display hand of player and computer, and alert who won
   // Increment player win or computer win by 1, depending on who won. Best out of three games wins
-
-  if (gameNum > 3) {
-  }
 
   let playerChoice = document.getElementById("choice_input").value; // This is the player's choice
 
@@ -31,22 +31,29 @@ function playChoice() {
   // Set up winning conditions
   if (playerChoice == "rock" && computerChoice == "Scissors") {
     displayWin.innerHTML = "<b> You won! </b> <br/> <br/>";
+    numWin++;
   } else if (playerChoice == "paper" && computerChoice == "Rock") {
     displayWin.innerHTML = "<b> You won! </b> <br/> <br/>";
+    numWin++;
   } else if (playerChoice == "scissors" && computerChoice == "Paper") {
     displayWin.innerHTML = "<b> You won! </b> <br/> <br/>";
+    numWin++;
   }
   //Set up draw conditions
   else if (playerChoice == "rock" && computerChoice == "Rock") {
     displayWin.innerHTML = "<b> Draw! </b> <br/> <br/>";
+    numDraws++;
   } else if (playerChoice == "paper" && computerChoice == "Paper") {
     displayWin.innerHTML = "<b> Draw! </b> <br/> <br/>";
+    numDraws++;
   } else if (playerChoice == "scissors" && computerChoice == "Scissors") {
     displayWin.innerHTML = "<b> Draw! </b> <br/> <br/>";
+    numDraws++;
   }
   // Setup losing condition
   else {
     displayWin.innerHTML = "<b> Sorry, you lose! </b> <br/> <br/>";
+    numLose++;
   }
 
   let displayComputerChoice = document.createElement("div");
@@ -59,7 +66,37 @@ function playChoice() {
 
   gameNum++;
 
+  if (gameNum > 3) {
+    endGame(numWin, numLose, numDraws);
+  }
+
   event.preventDefault();
+}
+
+function endGame(wins, losses, draws) {
+  displayWhoWon = document.createElement("div");
+
+  if (wins > losses) {
+    displayWhoWon.innerHTML = "<h2>Good job! You won the tournament!</h2>";
+  } else if (losses > wins) {
+    displayWhoWon.innerHTML = "<h2>Sorry! You lost. Try another round?</h2>";
+  } else {
+    displayWhoWon.innerHTML =
+      "<h2>Nice tournament. You and the computer have a stalemate.</h2>";
+  }
+
+  document.body.append(displayWhoWon);
+
+  let refreshPageButton = document.createElement("button");
+  refreshPageButton.innerText = "Click here to start a new tournament.";
+  document.body.append(refreshPageButton);
+
+  refreshPageButton.addEventListener("click", reloadPage);
+}
+
+function reloadPage() {
+  location.reload();
+  return false;
 }
 
 let playButton = document.getElementById("choice_button");
