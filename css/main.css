@@ -1,2 +1,25 @@
-
 /*  Put your CSS Here */
+
+html {
+  background-color: aquamarine;
+}
+
+h1 {
+  text-align: center;
+}
+
+.playBox {
+  text-align: center;
+  background-color: rgb(189, 152, 152);
+  border: 2px solid rgb(151, 80, 22);
+  border-radius: 5px;
+  padding: 20px;
+  width: 250px;
+  margin: auto;
+}
+
+button {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 2px;
+}
