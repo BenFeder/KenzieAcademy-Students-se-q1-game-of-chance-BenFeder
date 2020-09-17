@@ -87,9 +87,12 @@ function endGame(wins, losses, draws) {
 
   document.body.append(displayWhoWon);
 
+  let refreshPageDiv = document.createElement("div");
+  document.body.append(refreshPageDiv);
+
   let refreshPageButton = document.createElement("button");
   refreshPageButton.innerText = "Click here to start a new tournament.";
-  document.body.append(refreshPageButton);
+  refreshPageDiv.append(refreshPageButton);
 
   refreshPageButton.addEventListener("click", reloadPage);
 }
