@@ -13,13 +13,38 @@
     <meta name="keywords" content="Kenzie" />
 
     <!-- Title Page-->
-    <title>Kenzie HTML Page</title>
+    <title>Rock, Paper, Scissors: Game of Chance</title>
 
     <!-- CSS-->
     <link href="css/main.css" rel="stylesheet" media="all" />
+    <link
+      href="https://www.sciencemag.org/sites/default/files/styles/article_main_large/public/images/sn-rockpaper.jpg?itok=4WUMt1oc"
+      rel="icon"
+    />
   </head>
 
   <body>
     <!-- Your html here -->
+    <h1>Rock, Paper, Scissors Tournament!</h1>
+
+    <form class="playBox">
+      <label for="choice_input">Choose hand:</label>
+      <select id="choice_input">
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissors">Scissors</option>
+      </select>
+      <br />
+      <br />
+      <button id="choice_button">Rock, Paper, Scissors, Shoot!</button>
+    </form>
+
+    <br />
+    <br />
+
+    <div id="player_result"></div>
+    <div id="computer_result"></div>
+
+    <script src="code.js"></script>
   </body>
 </html>
