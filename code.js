@@ -3,24 +3,13 @@ let numWin = 0;
 let numLose = 0;
 let numDraws = 0;
 
-/*
-function createGameNumMax() {
-  let gameNumMax = document.getElementById("gameNum_input").value;
-  return gameNumMax;
-}
-*/
-
 function playChoice() {
   // Play user's choice of "rock, paper, or scissors" and compare to randomized result of computer's choice, also of "rock, paper, scissors"
   // Rock beats scissors, Scissors beats paper, and Paper beats rock
   // Display hand of player and computer, and alert who won
   // Increment player win or computer win by 1, depending on who won. Best out of three games wins
 
-  /*
-  if (gameNumMax == false) {
-    reloadPage();
-  }
-  */
+  let gameNumMax = document.getElementById("gameNum_input").value;
 
   let playerChoice = document.getElementById("choice_input").value; // This is the player's choice
 
@@ -79,7 +68,7 @@ function playChoice() {
 
   gameNum++;
 
-  if (gameNum > 3) {
+  if (gameNum > gameNumMax) {
     endGame(numWin, numLose, numDraws);
   }
 
@@ -116,7 +105,3 @@ function reloadPage() {
 
 let playButton = document.getElementById("choice_button");
 playButton.addEventListener("click", playChoice);
-
-/* let createGameButton = document.getElementById("createGameNumMax");
-createGameButton.addEventListener("click", createGameNumMax);
-*/
