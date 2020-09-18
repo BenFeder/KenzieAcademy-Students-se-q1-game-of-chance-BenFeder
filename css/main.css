@@ -41,3 +41,24 @@ div {
 input[type="number"] {
   text-align: center;
 }
+
+h2,
+h4 {
+  margin: 5px;
+}
+
+h4 {
+  font-weight: normal;
+}
+
+.winColor {
+  color: green;
+}
+
+.lossColor {
+  color: red;
+}
+
+.drawColor {
+  color: blue;
+}
