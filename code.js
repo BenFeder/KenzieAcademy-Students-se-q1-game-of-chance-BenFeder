@@ -79,12 +79,32 @@ function endGame(wins, losses, draws) {
   displayWhoWon = document.createElement("div");
 
   if (wins > losses) {
-    displayWhoWon.innerHTML = "<h2>Good job! You won the tournament!</h2>";
+    displayWhoWon.innerHTML =
+      "<h2 class='winColor'>Good job! You won the tournament!</h2> <h4>(Wins: " +
+      wins +
+      ", Losses: " +
+      losses +
+      ", Draws: " +
+      draws +
+      ")";
   } else if (losses > wins) {
-    displayWhoWon.innerHTML = "<h2>Sorry! You lost. Try another round?</h2>";
+    displayWhoWon.innerHTML =
+      "<h2 class='lossColor'>Sorry! You lost. Try another round?</h2> <h4>(Wins: " +
+      wins +
+      ", Losses: " +
+      losses +
+      ", Draws: " +
+      draws +
+      ")";
   } else {
     displayWhoWon.innerHTML =
-      "<h2>Nice tournament. You and the computer have a stalemate.</h2>";
+      "<h2 class='drawColor'>Nice tournament. You and the computer have a stalemate.</h2> <h4>(Wins: " +
+      wins +
+      ", Losses: " +
+      losses +
+      ", Draws: " +
+      draws +
+      ")";
   }
 
   document.body.append(displayWhoWon);
