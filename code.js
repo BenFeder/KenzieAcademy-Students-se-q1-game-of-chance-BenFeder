@@ -112,7 +112,6 @@ function endGame(wins, losses, draws) {
 
 function reloadPage() {
   location.reload();
-  return false;
 }
 
 let playButton = document.getElementById("choice_button");
