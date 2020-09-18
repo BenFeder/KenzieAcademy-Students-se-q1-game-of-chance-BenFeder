@@ -37,3 +37,7 @@ div {
   font-size: 15px;
   font-weight: bold;
 }
+
+input[type="number"] {
+  text-align: center;
+}
