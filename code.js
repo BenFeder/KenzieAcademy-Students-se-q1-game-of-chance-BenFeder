@@ -69,7 +69,8 @@ function playChoice() {
   gameNum++;
 
   if (gameNum > gameNumMax) {
-    endGame(numWin, numLose, numDraws);
+    gameNum = 1;
+    endGame(numWin, numLose, numDraws, gameNum);
   }
 
   event.preventDefault();
